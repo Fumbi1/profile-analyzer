@@ -1,0 +1,193 @@
+:root {
+  --bg: #ffffff;
+  --text: #111;
+  --nav-bg: #4b0082;
+  --nav-text: #fff;
+  --form-bg: #ffffff;
+  --button-bg: #6a0dad;
+  --button-hover: #580a9e;
+  --error-bg: #ffe5e5;
+  --error-text: #d8000c;
+}
+
+[data-theme='dark'] {
+  --bg: #121212;
+  --text: #f8f8f8;
+  --nav-bg: #1f1f1f;
+  --nav-text: #ffffff;
+  --form-bg: #1e1e1e;
+  --button-bg: #bb86fc;
+  --button-hover: #9f5cf7;
+  --error-bg: #331111;
+  --error-text: #ff6f6f;
+}
+
+body {
+  margin: 0;
+  padding-left: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(-45deg, #6a11cb, #2575fc, #1d2671, #c33764);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: var(--text);
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.app-container {
+  margin-top: 25px;
+  padding-top: 160px;
+  padding-bottom: 2rem;
+  padding-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  background: var(--form-bg);
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  text-align: center;
+}
+
+input {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button {
+  padding: 0.8rem;
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+button:hover {
+  animation: pulse 0.4s ease;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.05); }
+}
+
+button:disabled {
+  background-color: #a78bfa;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid purple;
+  border-top: 3px solid var(--button-hover);
+  border-radius: 50%;
+  animation: spin 0.1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error {
+  background-color: var(--error-bg);
+  color: var(--error-text);
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  border: 1px solid var(--error-text);
+}
+
+.summary-list {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.summary-card {
+  background: var(--form-bg);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  color: var(--text);
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.summary-card h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.3rem;
+}
+
+.summary-card .url {
+  font-size: 0.9rem;
+  color: gray;
+  margin-bottom: 1rem;
+}
+
+.summary-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-height: 6em;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.summary-text.expanded {
+  max-height: 1000px;
+}
+
+.summary-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.summary-actions button {
+  background-color: var(--button-bg);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.linkedin-logo {
+  width: 50px;
+  height: 50px;
+}
+
