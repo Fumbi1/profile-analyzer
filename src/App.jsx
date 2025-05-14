@@ -76,7 +76,7 @@ function App() {
     }
 
     const params = new URLSearchParams({
-      api_key: '681dfe8bb957574f6792bac1',
+      api_key: '681e2d74002f180a6f91ea97',
       type: 'profile',
       linkId,
       private: 'true'            // allow protected profiles
